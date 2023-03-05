@@ -4,6 +4,11 @@ export function getDateFormat(date){
   return `${day}.${month}.${year.slice(2)}`;
 }
 
+export function formatedDate(date){
+  const [day, month, year] = date.split('.');
+  return `20${year}-${month}-${day}`
+}
+
 export function sortingByDate(arrlist) {
   return arrlist.sort((a,b) => new Date(a.date) - new Date(b.date))
 }
@@ -16,4 +21,13 @@ export function getCurrentDate() {
 
   return `${year}-${month}-${day}`;
 }
+//training
+// {id: '7QT7RwhHMWvndfPyOEXnr',
+//  date: '05.03.23', 
+//  distance: '12'}
 
+//"12.01.12"
+export function searchDate(arrlist, training){
+  console.log(arrlist.findIndex((el) => el.date === training.date))
+  return arrlist.findIndex((el) => el.date === training.date)
+}
