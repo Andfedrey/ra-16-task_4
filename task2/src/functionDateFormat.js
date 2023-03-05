@@ -21,13 +21,7 @@ export function getCurrentDate() {
 
   return `${year}-${month}-${day}`;
 }
-//training
-// {id: '7QT7RwhHMWvndfPyOEXnr',
-//  date: '05.03.23', 
-//  distance: '12'}
 
-//"12.01.12"
 export function searchDate(arrlist, training){
-  console.log(arrlist.findIndex((el) => el.date === training.date))
   return arrlist.findIndex((el) => el.date === training.date)
 }

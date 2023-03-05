@@ -35,7 +35,6 @@ export default function Todo() {
     e.preventDefault();
     const formatDate = getDateFormat(newStatus.date)
     const newInfoList = [...info];
-    console.log(info)
     if(redFlag){
       newInfoList[redaction.arrId] = {id: redaction.id, date: formatDate, distance: newStatus.distance}
       setInfo(newInfoList)
