@@ -9,8 +9,8 @@ function App() {
   }
   function checkColor() {
     let hex = bgColor;
+    if(hex[0] !== '#' || hex.length > 7) return 'ERROR'
     if(hex.length > 6) {
-      if(hex[0] !== '#') return 'ERROR'
       hex = hex.replace('#', '');
       const hexDigits = '0123456789ABCDEF';
       const validHex = hex.split('').every((char) => hexDigits.includes(char.toUpperCase()));
@@ -23,6 +23,8 @@ function App() {
     return `rgb(${r},${g},${b})`}
   }
   return (
+    <>
+
     <div className='App' style={{ backgroundColor: `${checkColor()}` }}>
       <div className="block">
         <form className="formBlock" onSubmit={submitHandler}>
@@ -31,6 +33,7 @@ function App() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 
